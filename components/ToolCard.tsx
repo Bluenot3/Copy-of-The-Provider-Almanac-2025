@@ -213,14 +213,32 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool, accentColor = "indigo" }) => 
           </p>
         </div>
         
-        {tool.definingTrait && (
-          <div className="flex items-center gap-3 py-3.5 px-5 bg-white/5 rounded-2xl border border-white/5">
-            <Zap size={14} className="text-indigo-400 pulse-ring" />
-            <span className="text-[11px] font-black text-indigo-300 uppercase tracking-[0.3em]">
-              {tool.definingTrait}
-            </span>
-          </div>
-        )}
+        <div className="flex flex-wrap gap-3">
+          {tool.definingTrait && (
+            <div className="flex items-center gap-3 py-3.5 px-5 bg-white/5 rounded-2xl border border-white/5">
+              <Zap size={14} className="text-indigo-400 pulse-ring" />
+              <span className="text-[11px] font-black text-indigo-300 uppercase tracking-[0.3em]">
+                {tool.definingTrait}
+              </span>
+            </div>
+          )}
+          {tool.tier && (
+            <div className="flex items-center gap-3 py-3.5 px-5 bg-amber-500/10 rounded-2xl border border-amber-500/20">
+              <Eye size={14} className="text-amber-400" />
+              <span className="text-[11px] font-black text-amber-300 uppercase tracking-[0.3em]">
+                {tool.tier}
+              </span>
+            </div>
+          )}
+          {tool.cost && (
+            <div className="flex items-center gap-3 py-3.5 px-5 bg-emerald-500/10 rounded-2xl border border-emerald-500/20">
+              <DollarSign size={14} className="text-emerald-400" />
+              <span className="text-[11px] font-black text-emerald-300 uppercase tracking-[0.3em]">
+                {tool.cost}
+              </span>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

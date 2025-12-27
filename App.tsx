@@ -205,6 +205,52 @@ const App: React.FC = () => {
                  </div>
               </div>
            </div>
+
+           {/* Canonical 2025 Themes */}
+           <div className="space-y-16 pt-20">
+              <div className="flex items-center gap-6 mb-12">
+                 <div className="w-20 h-20 rounded-[2.5rem] bg-indigo-500/10 flex items-center justify-center text-indigo-400 ring-1 ring-indigo-500/20 shadow-2xl">
+                    <Activity size={36} />
+                 </div>
+                 <div className="space-y-2">
+                    <h4 className="text-5xl font-black tracking-tighter uppercase text-white">CANONICAL 2025 THEMES</h4>
+                    <p className="text-slate-500 text-xl max-w-3xl font-light font-serif italic">The structural shifts that defined the year</p>
+                 </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <div className="p-10 glass-dex-ultra rounded-[3rem] border-white/5 space-y-4 hover:border-indigo-500/20 transition-all">
+                    <div className="text-[10px] font-black text-indigo-400 uppercase tracking-widest">Theme 01</div>
+                    <div className="text-2xl font-bold text-white leading-tight">LLMs Stopped Being Products and Became Systems</div>
+                    <p className="text-sm text-slate-400 leading-relaxed">Models transformed into infrastructure primitives, not endpoints.</p>
+                 </div>
+                 <div className="p-10 glass-dex-ultra rounded-[3rem] border-white/5 space-y-4 hover:border-indigo-500/20 transition-all">
+                    <div className="text-[10px] font-black text-indigo-400 uppercase tracking-widest">Theme 02</div>
+                    <div className="text-2xl font-bold text-white leading-tight">Agents Replaced Tasks → Workflows → Roles</div>
+                    <p className="text-sm text-slate-400 leading-relaxed">Autonomous systems assumed responsibility for entire function classes.</p>
+                 </div>
+                 <div className="p-10 glass-dex-ultra rounded-[3rem] border-white/5 space-y-4 hover:border-indigo-500/20 transition-all">
+                    <div className="text-[10px] font-black text-indigo-400 uppercase tracking-widest">Theme 03</div>
+                    <div className="text-2xl font-bold text-white leading-tight">Reasoning Efficiency Mattered More Than Parameter Count</div>
+                    <p className="text-sm text-slate-400 leading-relaxed">Architecture and efficiency trumped brute scale.</p>
+                 </div>
+                 <div className="p-10 glass-dex-ultra rounded-[3rem] border-white/5 space-y-4 hover:border-indigo-500/20 transition-all">
+                    <div className="text-[10px] font-black text-indigo-400 uppercase tracking-widest">Theme 04</div>
+                    <div className="text-2xl font-bold text-white leading-tight">Open-Weight Models Reached True Frontier Relevance</div>
+                    <p className="text-sm text-slate-400 leading-relaxed">Open models contested closed models at the frontier.</p>
+                 </div>
+                 <div className="p-10 glass-dex-ultra rounded-[3rem] border-white/5 space-y-4 hover:border-indigo-500/20 transition-all">
+                    <div className="text-[10px] font-black text-indigo-400 uppercase tracking-widest">Theme 05</div>
+                    <div className="text-2xl font-bold text-white leading-tight">Infrastructure Became Strategic Constraints</div>
+                    <p className="text-sm text-slate-400 leading-relaxed">Power, chips, and cooling emerged as geopolitical variables.</p>
+                 </div>
+                 <div className="p-10 glass-dex-ultra rounded-[3rem] border-white/5 space-y-4 hover:border-indigo-500/20 transition-all">
+                    <div className="text-[10px] font-black text-indigo-400 uppercase tracking-widest">Theme 06</div>
+                    <div className="text-2xl font-bold text-white leading-tight">Standards Mattered as Much as Models</div>
+                    <p className="text-sm text-slate-400 leading-relaxed">MCP, tool protocols, and interfaces defined adoption.</p>
+                 </div>
+              </div>
+           </div>
         </section>
       )}
 
@@ -250,7 +296,34 @@ const App: React.FC = () => {
                  </div>
                  <div className="space-y-2">
                     <h4 className="text-5xl font-black tracking-tighter uppercase text-white">Motion Dynamics</h4>
-                    <p className="text-slate-500 text-2xl max-w-3xl font-light font-serif italic">From silent clips to cinematic multi-shot storytelling.</p>
+                    <p className="text-slate-500 text-2xl max-w-3xl font-light font-serif italic">From silent clips to cinematic multi-shot storytelling. AI video became a production medium in 2025.</p>
+                 </div>
+              </div>
+              <div className="mb-12 p-8 glass-dex-ultra rounded-[3rem] border-white/5 space-y-6">
+                 <div className="text-[11px] font-black text-fuchsia-400 uppercase tracking-widest flex items-center gap-3">
+                    <Activity size={16} /> 2025 VIDEO META-EVENTS
+                 </div>
+                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm text-slate-400">
+                    <div className="space-y-2">
+                       <div className="font-bold text-slate-200">1. Temporal Consistency Became Mandatory</div>
+                       <p className="text-xs">Flicker, jump-cuts, and identity drift stopped being acceptable.</p>
+                    </div>
+                    <div className="space-y-2">
+                       <div className="font-bold text-slate-200">2. Video-to-Video Overtook Text-to-Video</div>
+                       <p className="text-xs">Editing reality &gt; generating it from scratch.</p>
+                    </div>
+                    <div className="space-y-2">
+                       <div className="font-bold text-slate-200">3. Shot-Based Pipelines Emerged</div>
+                       <p className="text-xs">Prompts → scenes → sequences → timelines.</p>
+                    </div>
+                    <div className="space-y-2">
+                       <div className="font-bold text-slate-200">4. IP, Safety, and Watermarking Became Central</div>
+                       <p className="text-xs">Studio adoption forced guardrails.</p>
+                    </div>
+                    <div className="space-y-2">
+                       <div className="font-bold text-slate-200">5. AI Video Became a Labor Question</div>
+                       <p className="text-xs">Pre-viz, commercials, music videos disrupted first.</p>
+                    </div>
                  </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12">

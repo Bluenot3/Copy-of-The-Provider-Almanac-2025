@@ -52,7 +52,10 @@ const ProviderCard: React.FC<ProviderCardProps> = ({ provider }) => {
         <div className="flex-grow space-y-6">
           <div className="flex items-center gap-6">
             <div className={`p-4 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 shadow-[0_0_20px_rgba(99,102,241,0.2)]`}>
-              {provider.segment === 'Lab' ? <Database size={28} /> : provider.segment === 'Big Tech' ? <Globe size={28} /> : <Cpu size={28} />}
+              {provider.segment === 'Lab' ? <Database size={28} /> : 
+               provider.segment === 'Big Tech' ? <Globe size={28} /> : 
+               provider.segment === 'Infrastructure' ? <Cpu size={28} /> :
+               <Cpu size={28} />}
             </div>
             <div>
               <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter text-white group-hover:elite-shimmer transition-all duration-500 uppercase leading-none mb-2">
@@ -204,14 +207,18 @@ const ProviderCard: React.FC<ProviderCardProps> = ({ provider }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    {provider.pricing.map((p, i) => (
-                      <tr key={i} className="border-t border-white/5 hover:bg-white/[0.03] transition-colors group/row">
-                        <td className="p-6 lg:p-8 font-bold text-slate-100 group-hover/row:text-indigo-300 transition-colors">{p.model}</td>
-                        <td className="p-6 lg:p-8">{p.input} <span className="text-[10px] text-slate-600">/1M</span></td>
-                        <td className="p-6 lg:p-8 text-indigo-400/70 font-bold">{p.cached} <span className="text-[10px] text-slate-600">/1M</span></td>
-                        <td className="p-6 lg:p-8 font-medium">{p.output} <span className="text-[10px] text-slate-600">/1M</span></td>
-                      </tr>
-                    ))}
+                    {provider.pricing.map((p, i) => {
+                      const isPrice = (val: string) => val && (val.startsWith('$') || val === 'N/A' || val.toLowerCase().includes('free') || val.toLowerCase().includes('compute') || val.toLowerCase().includes('infrastructure') || val.toLowerCase().includes('enterprise') || val.toLowerCase().includes('subscription'));
+                      const showUnit = (val: string) => isPrice(val) && !val.toLowerCase().includes('free') && !val.toLowerCase().includes('compute') && !val.toLowerCase().includes('infrastructure') && !val.toLowerCase().includes('enterprise') && !val.toLowerCase().includes('subscription') && val !== 'N/A';
+                      return (
+                        <tr key={i} className="border-t border-white/5 hover:bg-white/[0.03] transition-colors group/row">
+                          <td className="p-6 lg:p-8 font-bold text-slate-100 group-hover/row:text-indigo-300 transition-colors">{p.model}</td>
+                          <td className="p-6 lg:p-8">{p.input} {showUnit(p.input) && <span className="text-[10px] text-slate-600">/1M</span>}</td>
+                          <td className="p-6 lg:p-8 text-indigo-400/70 font-bold">{p.cached} {showUnit(p.cached) && <span className="text-[10px] text-slate-600">/1M</span>}</td>
+                          <td className="p-6 lg:p-8 font-medium">{p.output} {showUnit(p.output) && <span className="text-[10px] text-slate-600">/1M</span>}</td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
               </div>

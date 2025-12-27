@@ -41,6 +41,7 @@ export interface ProviderDetail {
   zenVerdict: string;
   signalStrength: number; // 0 to 100
   traits: string[];
+  status2025?: string; // Status description for 2025
 }
 
 export interface ToolDetail {
@@ -54,6 +55,7 @@ export interface ToolDetail {
   cost?: string;
   techStack?: string[];
   releaseDate?: string;
+  tier?: string; // For video models: Tier 0, Tier 1, etc.
 }
 
 export interface AlmanacData {
